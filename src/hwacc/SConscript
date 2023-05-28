@@ -13,6 +13,7 @@ if env['TARGET_ISA'] == 'arm':
     SimObject('AccCluster.py')
     SimObject('StreamBuffer.py')
     SimObject('RegisterBank.py')
+    SimObject('LcuObject.py')
 
     #LLVMInterface
     SimObject('ComputeUnit.py')
@@ -43,6 +44,7 @@ if env['TARGET_ISA'] == 'arm':
     Source('stream_port.cc')
     Source('scratchpad_memory.cc')
     Source('register_bank.cc')
+    Source('lcu_object.cc')
     
     #
     Source('LLVMRead/src/value.cc')
@@ -84,6 +86,7 @@ if env['TARGET_ISA'] == 'arm':
     DebugFlag('StreamDma')
     DebugFlag('Trace')
     DebugFlag('Step')
+    DebugFlag('LcuDebugFlag')
 
     #
     CompoundFlag('JDEV', ['LLVMInterface','CommInterface', 'Runtime', 'RuntimeCompute', 'RuntimeQueues', 'SALAM_Debug'])
