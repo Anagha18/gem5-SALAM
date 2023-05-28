@@ -9,10 +9,10 @@ class LcuObject(SimObject):
 
     time_to_wait = Param.Latency("Time before firing the event")
     number_of_fires = Param.Int(1, "Number of times to be fired")
-    result_addr = Param.Addr(0, "Write the result to this memory location")
+    result = Param.Int(0, "Write the result to this memory location")
     # lcu_blob = Param.A
-    # inst_port = SlavePort("CPU side port, recieves requests")
-    # data_port = SlavePort("CPU side port, recieves messages")
-    # mem_side = MasterPort("Memory side port, sends request")
+    inst_port = ResponsePort("CPU side port, recieves requests. (Instructions)")
+    data_port = ResponsePort("CPU side port, recieves messages. (Data)")
+    mem_side = RequestPort("Memory side port, sends request. (Inst + data)")
 
 
