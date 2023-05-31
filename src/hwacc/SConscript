@@ -87,7 +87,6 @@ if env['TARGET_ISA'] == 'arm':
     DebugFlag('Trace')
     DebugFlag('Step')
     DebugFlag('LcuDebugFlag')
-
     #
     CompoundFlag('JDEV', ['LLVMInterface','CommInterface', 'Runtime', 'RuntimeCompute', 'RuntimeQueues', 'SALAM_Debug'])
     CompoundFlag('HWACC', ['CommInterface', 'LLVMInterface'])
